@@ -23,13 +23,13 @@ export function getLLM(providerOverride?: LLMProvider): BaseChatModel {
       },
     });
   } else if (provider === 'gemini') {
-    // Check for standard Gemini keys
-    const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
-    if (!apiKey) {
-      throw new Error('GEMINI_API_KEY or GOOGLE_API_KEY environment variable is required when LLM_PROVIDER is set to "gemini".');
+    const rawApiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    if (!rawApiKey || rawApiKey.trim() === '') {
+      throw new Error('GEMINI_API_KEY environment variable is missing or empty on Vercel.');
     }
 
-    const modelName = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+    const apiKey = rawApiKey.trim().replace(/^["']|["']$/g, '');
+    const modelName = process.env.GEMINI_MODEL || 'gemini-3.6-flash';
     return new ChatGoogleGenerativeAI({
       apiKey,
       model: modelName,
