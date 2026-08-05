@@ -103,7 +103,7 @@ ${report.reason}
           <div>
             <span className="font-bold block mb-0.5">Demo Mode Active</span>
             <span>
-              Live web search was bypassed because no <code className="text-amber-250 font-mono">TAVILY_API_KEY</code> was configured in your `.env.local`. The company statistics and news shown below are simulated baseline metrics, but the **Gemini 2.5 Flash LLM reasoning, SWOT compilation, and final score evaluation** are fully live!
+              Live web search was bypassed because no <code className="text-amber-250 font-mono">TAVILY_API_KEY</code> was configured in your `.env.local`. The company statistics and news shown below are simulated baseline metrics, but the **Gemini 3.6 Flash LLM reasoning, SWOT compilation, and final score evaluation** are fully live!
             </span>
           </div>
         </div>
