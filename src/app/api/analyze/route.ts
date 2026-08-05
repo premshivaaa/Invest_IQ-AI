@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server';
 import { runInvestmentResearch } from '@/agents/researchAgent';
 
 export const runtime = 'nodejs';
+export const maxDuration = 60; // Extend Vercel serverless execution limit to 60 seconds
 
 export async function POST(req: NextRequest) {
   try {
