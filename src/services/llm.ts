@@ -29,10 +29,10 @@ export function getLLM(providerOverride?: LLMProvider): BaseChatModel {
       throw new Error('GEMINI_API_KEY or GOOGLE_API_KEY environment variable is required when LLM_PROVIDER is set to "gemini".');
     }
 
-    // Using Gemini 2.5 Flash (for better free-tier quota limits)
+    // Using Gemini 3.6 Flash
     return new ChatGoogleGenerativeAI({
       apiKey,
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.6-flash',
       temperature: 0.1,
       json: true,
     });
