@@ -453,7 +453,7 @@ export default function Home() {
                     onClick={() => {
                       setValue('provider', 'gemini');
                       setDefaultProvider('gemini');
-                      success('Provider switched', 'Now using Gemini 2.5 Pro.');
+                      success('Provider switched', 'Now using Gemini 3.6 Flash.');
                     }}
                     className={`flex flex-col items-center justify-center p-4 rounded-xl border text-center transition-all cursor-pointer ${
                       selectedProvider === 'gemini'
@@ -461,7 +461,7 @@ export default function Home() {
                         : 'border-neutral-850 bg-neutral-900/10 text-neutral-400 hover:bg-neutral-900/30'
                     }`}
                   >
-                    <span className="font-bold text-sm">Gemini Pro</span>
+                    <span className="font-bold text-sm">Gemini Flash</span>
                     <span className="text-[10px] text-neutral-500 mt-1">Google</span>
                   </button>
 
